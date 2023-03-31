@@ -5,3 +5,4 @@ __latexindent_temp.tex
 *.aux
 *.gz
 *.fdb*
+*.out
