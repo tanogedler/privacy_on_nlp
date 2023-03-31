@@ -1,0 +1,7 @@
+__latexindent_temp.tex
+*.log
+*.bak*
+*.fls
+*.aux
+*.gz
+*.fdb*
