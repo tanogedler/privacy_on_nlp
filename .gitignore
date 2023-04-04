@@ -6,3 +6,5 @@ __latexindent_temp.tex
 *.gz
 *.fdb*
 *.out
+*.bbl
+*.blg
