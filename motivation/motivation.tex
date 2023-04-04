@@ -38,27 +38,29 @@
 
 \section*{Description}
 
-Privacy is a critical concern in various applications, particularly in NLP, where sensitive data is often involved. For instance, medical records contain confidential information that can be analyzed by NLP to predict a patient's disease. However, to maintain privacy, the data should not be shared with the NLP algorithm. Similarly, businesses may wish to predict customer sentiment through NLP while keeping the data confidential. Homomorphic encryption offers a solution by enabling encrypted data to undergo operations without decryption, thereby allowing NLP algorithms to be performed on encrypted data without compromising privacy. Our project will implement a homomorphic encryption scheme to conduct NLP algorithms on encrypted data, ensuring data privacy.
+Privacy is critical in various applications, particularly in NLP, where sensitive data is often involved. For instance, medical records contain confidential information NLP can analyze to predict a patient's disease. However, the data should not be shared with the NLP algorithm to maintain privacy. Similarly, businesses may predict customer sentiment through NLP while keeping the data confidential. Homomorphic encryption offers a solution by enabling encrypted data to undergo operations without decryption, thereby allowing NLP algorithms to be performed on encrypted data without compromising privacy. Our project will implement a homomorphic encryption scheme to conduct NLP algorithms on encrypted data, ensuring data privacy.
 
-More formally, we can define HE as follows: Let $E$ be an encryption scheme, and $K$ be a key space. Then, $E$ is a homomorphic encryption scheme if there exists a function $f$ such that for all $x,y \in \mathbb{Z}$ and all $k \in K$, we have that $E_k(f(x,y)) = f(E_k(x), E_k(y))$.
+More formally, we can define HE: Let $E$ be an encryption scheme and $K$ be a key space. Then, $E$ is a homomorphic encryption scheme if there exists a function $f$ such that for all $x,y \in \mathbb{Z}$ and all $k \in K$, we have that $E_k(f(x,y)) = f(E_k(x), E_k(y))$.The function $f$ is called the homomorphic operation.
 
-The function $f$ is called the homomorphic operation.
-
-A similar work can be found here: \href{https://huggingface.co/spaces/zama-fhe/encrypted\_sentiment\_analysis}{encrypted\_sentiment\_analysis}. For the implementation, we will use the library \href{https://docs.zama.ai/concrete-numpy/}{concrete-numpy}.
+A similar work can be found here: \href{https://huggingface.co/spaces/zama-fhe/encrypted\_sentiment\_analysis}{encrypted\_sentiment\_analysis}. For the implementation, we will use the library \href{https://docs.zama.ai/concrete-numpy/}{concrete-numpy}\cite{ConcreteNumpy}. Furthermore, the privacy-preserving models will be implemented using the library \href{https://github.com/zama-ai/concrete-ml}{Concrete ML}\cite{ConcreteML}.
 
 \section*{Data}
 
-We will use the following datasets:
+We will use the IMDB dataset from \href{https://huggingface.co/datasets/imdb}{HuggingFace}\cite{maas-EtAl:2011:ACL-HLT2011} to train the models. The dataset contains 50,000 reviews from IMDB, labeled as positive or negative. The data is split into 25,000 reviews for training and 25,000 reviews for testing.
 
 
 
 
 \section*{Evaluation}
-One method to evaluate the performance of a homomorphic encryption scheme is to messure the accuracy of the predictions over encrypted data and compare it with the accuracy of the predictions over plaintext data. We can also messure the time it takes to perform the predictions. We expect that the time it takes to perform the predictions over encrypted data is higher and also that the accuracy is lower. However, we expect that the accuracy is still high enough to be useful.
+One method to evaluate the performance of a homomorphic encryption scheme is to measure the accuracy of the predictions over encrypted data and compare it with the accuracy of the predictions over plaintext data. We can also measure the time it takes to perform the predictions. An assumption is that the time it takes to perform the predictions over encrypted data will be higher than the respective time over plain data, and the accuracy will decrease. However, we expect the accuracy will still be high enough to be useful.
 
 
 
 
+
+% add the file references.bib to the root folder of your project
+\bibliographystyle{plain}
+\bibliography{references}
 
 
 
